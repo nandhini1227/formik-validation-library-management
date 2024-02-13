@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { Card, Form } from "react-bootstrap";
+import { Card, Form,Button} from "react-bootstrap";
 import PropTypes from 'prop-types'; // Import PropTypes
 
 const Author = ({ author, setAuthor, authedit }) => {
@@ -91,18 +91,19 @@ const Author = ({ author, setAuthor, authedit }) => {
             {formik.errors.bio ? (
               <Form.Text className="text-danger">
                 {formik.errors.bio}
-               </Form.Text>
-             ) : null }
-           </ Form.Group >
-           {/* Use className instead of class */}
-           <div className = "d-grid gap-1" >
-             {/* Rest of the code remains unchanged */}
-           </div >
-         </ Form >
-       </ Card.Body >
-     </ Card >
-   );
- };
+              </Form.Text>
+            ) : null}
+          </Form.Group>
+          <div className="d-grid gap-1">
+          <Button type="submit" variant="primary">
+            Add the Details
+          </Button>
+          </div>
+        </Form>
+      </Card.Body>
+    </Card>
+  );
+};
 
 // Define prop types for Author component
 Author.propTypes = {
